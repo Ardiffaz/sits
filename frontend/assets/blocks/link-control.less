@@ -1,0 +1,27 @@
+@import "../vars";
+
+.link-control{
+  .link();
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  user-select: none;
+  
+  &--warning{
+    color: @color-red;
+    font-weight: 500;
+  }
+  
+  &--green{
+    color: @color-green;
+  }
+
+  &--disabled, &--disabled:hover{
+    color: fade(@color-gray, 60%);
+    cursor: auto;
+  }
+
+  &--smaller{
+    font-size: 80%;
+  }
+
+}

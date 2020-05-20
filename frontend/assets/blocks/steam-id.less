@@ -1,0 +1,17 @@
+@import "../vars";
+
+.steam-id{
+  white-space: nowrap;
+
+  &:before, &:after{
+    display: inline;
+  }
+
+  &:before{
+    content: '[';
+  }
+
+  &:after{
+    content: ']';
+  }
+}

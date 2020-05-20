@@ -1,0 +1,45 @@
+@import "../vars";
+
+.sync{
+
+  &__success{
+    color: @color-green;
+    font-weight: 500;
+    border-left: 3px solid @color-orange;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__success-text{
+    flex-grow: 1;
+  }
+
+  &__result-line{
+
+    & + &{
+      margin-top: 10px;
+    }
+
+  }
+
+  &__items{
+    margin-bottom: 30px;
+  }
+
+  &__options{
+    border-top: 1px solid @color-gray;
+  }
+
+  &__option{
+    padding: 6px;
+    border-bottom: 1px solid @color-gray;
+    background: transparent;
+    transition: background 0.3s;
+
+    &:hover{
+      background: fade(@color-gray, 10%);
+    }
+  }
+
+}

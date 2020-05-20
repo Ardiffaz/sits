@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -e
+
+header() {
+    echo "==========================="
+    echo "$@"
+    echo "==========================="
+}
+
+header "Re-building docker"
+docker-compose build
+
+header "Restarting"
+docker-compose stop
+./up -d
+
+header "Updating backend"
+docker-compose exec backend composer up
+
+header "Clearing prod cache"
+docker-compose exec backend console cache:clear -e prod
+
+header "Clearing dev cache"
+docker-compose exec backend console cache:clear -e dev

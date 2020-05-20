@@ -1,0 +1,17 @@
+@import "../vars";
+
+.layout{
+  display: grid;
+  grid-template-areas: 'sidebar main';
+  grid-template-columns: 220px 1fr;
+  grid-gap: 30px;
+
+  &__side{
+    grid-area: sidebar;
+  }
+
+  &__main{
+    grid-area: main;
+  }
+
+}

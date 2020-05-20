@@ -1,0 +1,37 @@
+@import "../vars";
+
+.simpleinput{
+  border: none;
+  border-radius: 0;
+  background: fade(@color-blue, 20%);
+  border-bottom: 2px solid @color-green;
+  padding: 5px 8px;
+  height: 32px;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  color: @color-text;
+  transition: border-bottom-color 0.3s;
+
+  &:focus{
+    border-bottom-color: @color-yellow;
+  }
+
+  &--big{
+    height: 43px;
+  }
+
+  &--textarea{
+    height: auto;
+    min-height: 32px;
+  }
+
+  &--file{
+    padding: 8px;
+  }
+
+  option{
+    background-color: darken(@color-gray, 28%);
+    color: @color-text;
+  }
+}

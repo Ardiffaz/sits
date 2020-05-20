@@ -1,0 +1,36 @@
+@import "../vars";
+
+.checkbox{
+  display: none;
+
+  & + label:before{
+    content: '\f00c';
+    //noinspection CssNoGenericFontName
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: transparent;
+    font-size: 12px;
+    line-height: 14px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid @color-green;
+    overflow: hidden;
+    background: fade(@color-blue, 20%);
+    cursor: pointer;
+    margin-right: 4px;
+    transform: translateY(4px);
+  }
+
+  &:checked + label:before{
+    color: @color-green;
+  }
+
+  &:disabled + label{
+    opacity: 0.5;
+
+    &:before{
+      cursor: default;
+    }
+  }
+}

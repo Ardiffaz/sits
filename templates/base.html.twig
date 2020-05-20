@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Hello World{% endblock %}</title>
+        <link rel="icon" type="image/png" href="/favicon.png">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('main') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% if test is defined  %}
+            {{ dump(test) }}
+        {% else %}
+            {% block body %}
+                <div id="sits"></div>
+            {% endblock %}
+
+            {% block javascripts %}
+                {{ encore_entry_script_tags('main') }}
+            {% endblock %}
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,154 @@
+@import "./vars";
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Regular'), local('Ubuntu-Regular'),
+    url('./fonts/Ubuntu-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Light'), local('Ubuntu-Light'),
+    url('./fonts/Ubuntu-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Light Italic'), local('Ubuntu-LightItalic'),
+    url('./fonts/Ubuntu-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Medium'), local('Ubuntu-Medium'),
+    url('./fonts/Ubuntu-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Italic'), local('Ubuntu-Italic'),
+    url('./fonts/Ubuntu-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'),
+    url('./fonts/Ubuntu-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Bold Italic'), local('Ubuntu-BoldItalic'),
+    url('./fonts/Ubuntu-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: local('Ubuntu Medium Italic'), local('Ubuntu-MediumItalic'),
+    url('./fonts/Ubuntu-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Ubuntu Condensed';
+  src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'),
+    url('./fonts/UbuntuCondensed-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  background-color: #313131;
+}
+
+html, body{
+  height: 100%;
+}
+
+a{
+  .link();
+}
+
+.color-red{color: @color-red;}
+.color-green{color: @color-green;}
+
+.color-unplayed{color: @color-unplayed;}
+.color-started{color: @color-started;}
+.color-beaten{color: @color-beaten;}
+.color-completed{color: @color-completed;}
+
+.h1, .h2, .h3{
+  font-family: @font-condensed;
+  font-weight: normal;
+  border-left: 2px solid @color-green;
+  padding-left: 10px;
+}
+
+.h1{
+  font-size: 34px;
+  margin: 0 0 20px;
+}
+
+.h2{
+  font-size: 30px;
+  margin: 0 0 16px;
+}
+
+.h3{
+  font-size: 26px;
+  margin: 0 0 14px;
+}
+
+.fa-mr{
+  margin-right: 0.4em;
+}
+
+.color-red { color: @color-red; }
+.color-pink { color: @color-pink; }
+.color-blue { color: @color-blue; }
+.color-green { color: @color-green; }
+.color-yellow { color: @color-yellow; }
+.color-orange { color: @color-orange; }
+.color-violet { color: @color-violet; }
+.color-gray { color: @color-gray; }
+
+.line-green{
+  height: 1px;
+  width: 100%;
+  background: @color-green;
+}
+
+@import "./blocks/container";
+@import "./blocks/button";
+@import "./blocks/link-control";
+@import "./blocks/simpleinput";
+@import "./blocks/steam-id";
+@import "./blocks/heading";
+@import "./blocks/layout";
+@import "./blocks/section";
+@import "./blocks/buttons-line";
+@import "./blocks/radiobox";
+@import "./blocks/checkbox";
+@import "./blocks/blue-label";
+@import "./blocks/not-found.less";
+@import "./blocks/list-nav.less";
+@import "./blocks/template.less";
+@import "./transitions";
+
+
+

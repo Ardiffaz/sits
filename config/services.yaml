@@ -1,0 +1,71 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'en'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    _instanceof:
+        App\Tools\SteamApi\BaseApiClient:
+            bind:
+                $apiKey: '%env(string:STEAM_API_KEY)%'
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+        calls:
+            - method: setSerializer
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    App\Tools\SteamApi\ApiClient:
+
+    App\Tools\SteamSpy\ApiClient:
+
+    Goutte\Client:
+
+    GuzzleHttp\Client:
+
+    Maximaster\SymfonyDoctrineEntityNormalizer\ObjectFromDatabaseNormalizer:
+        autoconfigure: false
+        calls:
+            - method: setEntityManager
+            - method: setIdFetcher
+            - method: setPropertyAccessor
+            - method: setPropertyInfoExtractor
+        arguments:
+            - '@serializer.mapping.class_metadata_factory'
+            - '@serializer.name_converter.metadata_aware'
+            - '@serializer.property_accessor'
+            - '@property_info'
+            - '@serializer.mapping.class_discriminator_resolver'
+            - null
+        tags:
+            - { name: serializer.normalizer, priority: -999 }
+
+    Maximaster\SymfonyDoctrineEntityNormalizer\IdFetcher:
+
+    App\Operation\Sync\SyncingAppDetailsDW:
+        arguments:
+            $dataWorldApiKey: '%env(string:DATA_WORLD_API_KEY)%'
+
+    App\Command\:
+        resource: '../src/Command/*.php'
+        calls:
+            - method: setEntityManager

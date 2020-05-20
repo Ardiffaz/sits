@@ -1,0 +1,117 @@
+@import "../vars";
+
+.sync-item{
+  display: flex;
+  border-bottom: 1px solid @color-green;
+  padding: 20px 10px;
+  transition: background-color 0.3s;
+
+  &:hover{
+    background-color: fade(@color-blue, 7%);
+  }
+
+  &__pic{
+    width: 64px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  &__img{
+    width: 64px;
+    height: 64px;
+    display: block;
+  }
+
+  &__info{
+    flex-grow: 1;
+  }
+
+  &__loading, &__success{
+    align-self: center;
+    margin: 0 20px;
+  }
+
+  &__success{
+    font-size: 24px;
+    color: @color-green;
+  }
+
+  &__name-line{
+    margin-bottom: 8px;
+    font-family: @font-condensed;
+    display: flex;
+    align-items: center;
+  }
+
+  &__name{
+    color: @color-blue;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+
+  &__custom-name{
+    color: @color-green;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  &__custom-name-input{
+    width: 240px;
+    margin-right: 10px;
+  }
+
+  &__id{
+    font-size: 12px;
+    color: @color-gray;
+  }
+
+  &__data{
+    font-size: 14px;
+  }
+
+  &__row{
+    display: grid;
+    grid-gap: 14px;
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  &__col{
+    width: 150px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 2px;
+    text-align: right;
+  }
+
+  &__status{
+    font-size: 14px;
+  }
+
+  &__list-item{
+    margin-right: 4px;
+
+    &:after{
+      content: ',';
+      display: inline;
+    }
+
+    &:last-child:after{
+      display: none;
+    }
+  }
+  
+  &__update-date{
+    text-align: right;
+    color: @color-gray;
+    font-size: 14px;
+    padding-top: 2px;
+  }
+
+  &__long-input{
+    width: 360px;
+  }
+}
