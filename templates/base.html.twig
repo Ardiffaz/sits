@@ -9,16 +9,12 @@
         {% endblock %}
     </head>
     <body>
-        {% if test is defined  %}
-            {{ dump(test) }}
-        {% else %}
-            {% block body %}
-                <div id="sits"></div>
-            {% endblock %}
+    {% block body %}
+        <div id="sits"></div>
+    {% endblock %}
 
-            {% block javascripts %}
-                {{ encore_entry_script_tags('main') }}
-            {% endblock %}
-        {% endif %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('main') }}
+    {% endblock %}
     </body>
 </html>
