@@ -487,7 +487,7 @@
 
                 if (checkSingle)
                 {
-                    if (this.gifts.length === 1)
+                    if ((this.gifts.length === 1) && (!this.checkedGifts.includes(this.gifts[0])))
                         this.checkedGifts.push(this.gifts[0]);
                 }
 
