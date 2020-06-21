@@ -135,7 +135,7 @@
         computed: {
             ...mapState({
                 loggedUser: state => state.auth.loggedUser,
-                maxUsersLimit: state => state.grouos.maxUsersLimit
+                maxUsersLimit: state => state.groups.maxUsersLimit
             }),
 
             ...mapGetters({
