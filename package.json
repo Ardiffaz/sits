@@ -3,7 +3,7 @@
         "@fortawesome/fontawesome-free": "^5.14.0",
         "@symfony/webpack-encore": "^0.30.2",
         "autoprefixer": "^9.8.6",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "core-js": "^3.6.5",
         "css-mqpacker": "^7.0.0",
         "less": "^3.12.2",
